@@ -4,20 +4,48 @@
 		<title>Trevor's Portfolio Page: Call of Duty: Vanguard</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
+		<style>
+			.gallery .button-container {
+				display: flex;
+				justify-content: space-between;
+				}
+				
+				.gallery .button-container button {
+				background-color: #e6ffd4;
+				border: none;
+				color: #333;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				}
+				
+				.gallery .button-container button:hover {
+				background-color: #ddff1c;
+				}
+		</style>
 		<script>const videos = Array.from(document.querySelectorAll('iframe'));
 			document.addEventListener('DOMContentLoaded', function() {
 				const gallery = document.querySelector('.gallery');
+				const buttonContainer = gallery.querySelector('.button-container');
 				const videoFrames = Array.from(document.querySelectorAll('.video-frame'));
 				const previousButton = document.querySelector('#previousButton');
 				const nextButton = document.querySelector('#nextButton');
 				
 				let currentVideoIndex = 0;
+				
+				
+				if (buttonContainer) {
+					buttonContainer.style.display = 'flex';
+				}
 			
 			videoFrames.forEach((frame, index) => {
 				if (index !== currentVideoIndex) {
 				frame.style.display = 'none';
 				}
 			});
+			document.addEventListener('DOMContentLoaded', function() {
+				
+				});
 			
 			function showPreviousVideo() {
 				if (currentVideoIndex > 0) {
@@ -39,6 +67,13 @@
 			});
 			
 	</script>
+	<noscript>
+		<style>
+			.gallery .button-container {
+			display: none;
+			}
+		</style>
+		</noscript>
 	</head>
 	<body>
 		<header>
@@ -119,9 +154,11 @@
 			<main></main>			
 			<h4>Videos</h4>
 			<div class="gallery-container">
-				<div class="gallery">
-				<button id="previousButton">Previous</button>
-				<button id="nextButton">Next</button>
+				<div id= gallery class="gallery">
+					<div class="button-container">
+						<button  id="previousButton">Previous</button>
+						<button  id="nextButton">Next</button>
+					</div>
 				<div class="video-frame">
 					<iframe
 					width="350"

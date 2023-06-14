@@ -5,20 +5,23 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
 		<style>
-			.flex-container {
+			.gallery .button-container {
 				display: flex;
-				align-items: center; /* Align items vertically */
-			}
-
-			.flex-container .button-container {
-				display: flex;
-				flex-direction: column; /* Stack the buttons vertically */
-				align-items: flex-start; /* Align buttons to the start */
-			}
-
-			.button-container button {
-				margin-bottom: 10px; /* Add some space between buttons */
-			}
+				justify-content: space-between;
+				}
+				
+				.gallery .button-container button {
+				background-color: #e6ffd4;
+				border: none;
+				color: #000000;
+				padding: 10px 20px;
+				font-size: 16px;
+				cursor: pointer;
+				}
+				
+				.gallery .button-container button:hover {
+				background-color: #ddff1c;
+				}
 		</style>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
@@ -54,6 +57,13 @@
 				nextButton.addEventListener('click', showNextImage);
 			});
 		</script>
+		<noscript>
+			<style>
+				.gallery .button-container {
+				display: none;
+				}
+			</style>
+			</noscript>
 	</head>
 	<body>
 		<header>
@@ -104,26 +114,30 @@
 				<li>JSON</li>
 			</ul>
 			<h4>Images and Video</h4>
-			<div class="flex-container">
-				<div>
-					<button id="previousButton">Previous</button>
-					<button id="nextButton">Next</button>
-				</div>
-				<div>
-					<img class="specialImg" src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
-				</div>
-				<div>
-					<img class="specialImg" src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
-				</div>
-				<div>
-					<iframe class="specialImg"
-						src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
-					></iframe>
-				</div>
-				<div>
+			<div class="gallery-container">
+				<div id= gallery class="gallery">
+					<div class="flex-container">
+						<div class="button-container">
+							<button class="button-container" id="previousButton">Previous</button>
+							<button class="button-container" id="nextButton">Next</button>
+						</div>
+						<div>
+							<img class="specialImg" src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
+						</div>
+						<div>
+							<img class="specialImg" src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
+						</div>
+						<div>
+							<iframe class="specialImg"
+								src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
+							></iframe>
+						</div>
+					<div>
+					</div>
 				</div>
 			</div>
-			<br>
+		</div>
+		<br>
 		</main>
 		<footer>
 			Trevor Cardoza's Portfolio.

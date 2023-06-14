@@ -38,6 +38,7 @@
 .specialImg{
 	border-radius: 15px 15px 15px 15px;
 }
+
 @media(min-width: 0px) and (max-width: 820px) {
 	.dropdown-content {
 		padding: 1px 1px;
