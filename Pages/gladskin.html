@@ -4,6 +4,56 @@
 		<title>Trevor's Portfolio Page: GladskinMD</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
+		<style>
+			.flex-container {
+				display: flex;
+				align-items: center; /* Align items vertically */
+			}
+
+			.flex-container .button-container {
+				display: flex;
+				flex-direction: column; /* Stack the buttons vertically */
+				align-items: flex-start; /* Align buttons to the start */
+			}
+
+			.button-container button {
+				margin-bottom: 10px; /* Add some space between buttons */
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const images = Array.from(document.querySelectorAll('.specialImg'));
+				const previousButton = document.querySelector('#previousButton');
+				const nextButton = document.querySelector('#nextButton');
+
+				let currentImageIndex = 0;
+
+				images.forEach((image, index) => {
+					if (index !== currentImageIndex) {
+						image.style.display = 'none';
+					}
+				});
+
+				function showPreviousImage() {
+					if (currentImageIndex > 0) {
+						images[currentImageIndex].style.display = 'none';
+						currentImageIndex--;
+						images[currentImageIndex].style.display = 'block';
+					}
+				}
+
+				function showNextImage() {
+					if (currentImageIndex < images.length - 1) {
+						images[currentImageIndex].style.display = 'none';
+						currentImageIndex++;
+						images[currentImageIndex].style.display = 'block';
+					}
+				}
+
+				previousButton.addEventListener('click', showPreviousImage);
+				nextButton.addEventListener('click', showNextImage);
+			});
+		</script>
 	</head>
 	<body>
 		<header>
@@ -56,16 +106,22 @@
 			<h4>Images and Video</h4>
 			<div class="flex-container">
 				<div>
+					<button id="previousButton">Previous</button>
+					<button id="nextButton">Next</button>
+				</div>
+				<div>
 					<img class="specialImg" src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
 				</div>
 				<div>
 					<img class="specialImg" src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
 				</div>
-					<div class="gladskinVideo">
-						<iframe class="specialImg"
-							src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
-						></iframe>
-					</div>
+				<div>
+					<iframe class="specialImg"
+						src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
+					></iframe>
+				</div>
+				<div>
+				</div>
 			</div>
 			<br>
 		</main>
