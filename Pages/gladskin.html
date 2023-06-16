@@ -1,146 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Trevor's Portfolio Page: GladskinMD</title>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="../Style/style.css" />
-		<style>
-			.gallery .button-container {
-				display: flex;
-				justify-content: space-between;
-				}
-				
-				.gallery .button-container button {
-				background-color: #e6ffd4;
-				border: none;
-				color: #000000;
-				padding: 10px 20px;
-				font-size: 16px;
-				cursor: pointer;
-				}
-				
-				.gallery .button-container button:hover {
-				background-color: #ddff1c;
-				}
-		</style>
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				const images = Array.from(document.querySelectorAll('.specialImg'));
+<head>
+    <title>Trevor's Portfolio Page: GladskinMD</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../Style/style.css" />
+    <style>
+        .gallery .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .gallery .button-container button {
+            background-color: #e6ffd4;
+            border: none;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .gallery .button-container button:hover {
+            background-color: #ddff1c;
+        }
+    </style>
+    <script>
+        const object = Array.from(document.querySelectorAll('.specialImg'));
+				document.addEventListener('DOMContentLoaded', function() {
+				const gallery = document.querySelector('.gallery');
+				const buttonContainer = gallery.querySelector('.button-container');
+				const objectFrames = Array.from(document.querySelectorAll('.object-frame'));
 				const previousButton = document.querySelector('#previousButton');
 				const nextButton = document.querySelector('#nextButton');
-
-				let currentImageIndex = 0;
-
-				images.forEach((image, index) => {
-					if (index !== currentImageIndex) {
-						image.style.display = 'none';
-					}
-				});
-
-				function showPreviousImage() {
-					if (currentImageIndex > 0) {
-						images[currentImageIndex].style.display = 'none';
-						currentImageIndex--;
-						images[currentImageIndex].style.display = 'block';
-					}
+				
+				let currentObjectIndex = 0;
+				
+				
+				if (buttonContainer) {
+					buttonContainer.style.display = 'flex';
 				}
-
-				function showNextImage() {
-					if (currentImageIndex < images.length - 1) {
-						images[currentImageIndex].style.display = 'none';
-						currentImageIndex++;
-						images[currentImageIndex].style.display = 'block';
-					}
+			
+				objectFrames.forEach((frame, index) => {
+				if (index !== currentObjectIndex) {
+				frame.style.display = 'none';
 				}
-
-				previousButton.addEventListener('click', showPreviousImage);
-				nextButton.addEventListener('click', showNextImage);
 			});
-		</script>
-		<noscript>
-			<style>
-				.gallery .button-container {
-				display: none;
+			document.addEventListener('DOMContentLoaded', function() {
+				
+				});
+			
+			function showPreviousVideo() {
+				if (currentObjectIndex > 0) {
+				videoFrames[currentObjectIndex].style.display = 'none';
+				currentObjectIndex--;
+				videoFrames[currentObjectIndex].style.display = 'block';
 				}
-			</style>
-			</noscript>
-	</head>
-	<body>
-		<header>
-			<h1>Trevor's Portfolio Page</h1>
-			<nav>
-				<a href="../index.html">Home</a> |
-				<a href="about.html">About</a> |
-				<div class="dropdown">
-					<span><a href="portfolioHome.html">Portfolio Work</a></span>
-					<div class="dropdown-content">
-								<a href="gladskin.html">GladskinMD</a>
-								<br>
-								<a href="ExacTrac.html">ExacTrac</a>
-								<br>
-								<a href="StarWars.html">Star Wars Short</a>
-								<br>
-								<a href="callOfDutyVanguard.html">Call Of Duty: VANGUARD</a>
-								<br>
-								<a href="HighSidin.html">High Sidin': Hyphy Edition</a>
-								<br>
-						</div>
-				</div>
-				|
-				<a href="socials.html"> Socials and Contact </a>
-			</nav>
-		</header>
-		<main>
-			<img
-				src="../images/Gladskin-Logo.png"
-				alt="Gladskin Logo"
-				width="500"
-				height="300"
-			/>
-			<h2>GladskinMD Battle of the Biome</h2>
-			<a href="https://showcase.lvlex.link/gladskin"> Try now!</a>
-			<p>
-				A demonstrative demo of how GladskinMD work for inflammatory
-				skin conditions.
-			</p>
-			<p>
-				I worked as a UI Engineer working on the functionality of
-				the tools UI and Science Snippet sections of the game.
-			</p>
-			<h4>Tools Used:</h4>
-			<ul>
-				<li>Unity</li>
-				<li>C#</li>
-				<li>JSON</li>
-			</ul>
-			<h4>Images and Video</h4>
-			<div class="gallery-container">
-				<div id= gallery class="gallery">
-					<div class="flex-container">
-						<div class="button-container">
-							<button class="button-container" id="previousButton">Previous</button>
-							<button class="button-container" id="nextButton">Next</button>
-						</div>
-						<div>
-							<img class="specialImg" src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
-						</div>
-						<div>
-							<img class="specialImg" src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
-						</div>
-						<div>
-							<iframe class="specialImg"
-								src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
-							></iframe>
-						</div>
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		</main>
-		<footer>
-			Trevor Cardoza's Portfolio.
-		</footer>
-	</body>
+			}
+			
+			function showNextVideo() {
+				if (currentObjectIndex < videoFrames.length - 1) {
+				videoFrames[currentObjectIndex].style.display = 'none';
+				currentObjectIndex++;
+				videoFrames[currentObjectIndex].style.display = 'block';
+				}
+			}
+			previousButton.addEventListener('click', showPreviousVideo);
+			nextButton.addEventListener('click', showNextVideo);
+			});
+			
+    </script>
+    <noscript>
+        <style>
+            .gallery .button-container {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <img
+            src="../images/Gladskin-Logo.png"
+            alt="Gladskin Logo"
+            width="500"
+            height="300"
+        />
+        <h2>GladskinMD Battle of the Biome</h2>
+        <a href="https://showcase.lvlex.link/gladskin"> Try now!</a>
+        <p>
+            A demonstrative demo of how GladskinMD works for inflammatory
+            skin conditions.
+        </p>
+        <p>
+            I worked as a UI Engineer working on the functionality of
+            the tools UI and Science Snippet sections of the game.
+        </p>
+        <h4>Tools Used:</h4>
+        <ul>
+            <li>Unity</li>
+            <li>C#</li>
+            <li>JSON</li>
+        </ul>
+        <h4>Images and Video</h4>
+        <div class="gallery-container">
+            <div id="gallery" class="gallery">
+                <div class="flex-container">
+                    <div class="button-container">
+                        <button class="button-container" id="previousButton">Previous</button>
+                        <button class="button-container" id="nextButton">Next</button>
+                    </div>
+                    <div>
+                        <img class="specialObj" width="350" height="200"src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
+                    </div>
+                    <div>
+                        <img class="specialObj" width="350" height="200"src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
+                    </div>
+                    <div>
+                        <iframe class="specialObj" width="350" height="200"
+                            src="https://www-ccv.adobe.io/v1/player/ccv/3BzJZGpe_VR/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
 </html>

@@ -23,50 +23,6 @@
 				background-color: #ddff1c;
 				}
 		</style>
-		<script>const videos = Array.from(document.querySelectorAll('iframe'));
-			document.addEventListener('DOMContentLoaded', function() {
-				const gallery = document.querySelector('.gallery');
-				const buttonContainer = gallery.querySelector('.button-container');
-				const videoFrames = Array.from(document.querySelectorAll('.video-frame'));
-				const previousButton = document.querySelector('#previousButton');
-				const nextButton = document.querySelector('#nextButton');
-				
-				let currentVideoIndex = 0;
-				
-				
-				if (buttonContainer) {
-					buttonContainer.style.display = 'flex';
-				}
-			
-			videoFrames.forEach((frame, index) => {
-				if (index !== currentVideoIndex) {
-				frame.style.display = 'none';
-				}
-			});
-			document.addEventListener('DOMContentLoaded', function() {
-				
-				});
-			
-			function showPreviousVideo() {
-				if (currentVideoIndex > 0) {
-				videoFrames[currentVideoIndex].style.display = 'none';
-				currentVideoIndex--;
-				videoFrames[currentVideoIndex].style.display = 'block';
-				}
-			}
-			
-			function showNextVideo() {
-				if (currentVideoIndex < videoFrames.length - 1) {
-				videoFrames[currentVideoIndex].style.display = 'none';
-				currentVideoIndex++;
-				videoFrames[currentVideoIndex].style.display = 'block';
-				}
-			}
-			previousButton.addEventListener('click', showPreviousVideo);
-			nextButton.addEventListener('click', showNextVideo);
-			});
-			
-	</script>
 	<noscript>
 		<style>
 			.gallery .button-container {
@@ -76,30 +32,6 @@
 		</noscript>
 	</head>
 	<body>
-		<header>
-			<h1>Trevor's Portfolio Page</h1>
-			<nav>
-				<a href="../index.html">Home</a> |
-				<a href="about.html">About</a> |
-				<div class="dropdown">
-					<span><a href="portfolioHome.html">Portfolio Work</a></span>
-					<div class="dropdown-content">
-								<a href="gladskin.html">GladskinMD</a>
-								<br>
-								<a href="ExacTrac.html">ExacTrac</a>
-								<br>
-								<a href="StarWars.html">Star Wars Short</a>
-								<br>
-								<a href="callOfDutyVanguard.html">Call Of Duty: VANGUARD</a>
-								<br>
-								<a href="HighSidin.html">High Sidin': Hyphy Edition</a>
-								<br>
-						</div>
-				</div>
-				|
-				<a href="socials.html"> Socials and Contact </a>
-			</nav>
-		</header>
 		<main>
 			<img
 				src="../images/Call-of-Duty-Vanguard.png"
@@ -159,7 +91,7 @@
 						<button  id="previousButton">Previous</button>
 						<button  id="nextButton">Next</button>
 					</div>
-				<div class="video-frame">
+				<div class="specialObj">
 					<iframe
 					width="350"
 					height="200"
@@ -171,7 +103,7 @@
 					Shake in Get Home Mission
 					</p>
 				</div>
-				<div class="video-frame">
+				<div class="specialObj">
 					<iframe
 					width="350"
 					height="200"
@@ -183,7 +115,7 @@
 					when shot at
 					</p>
 				</div>
-				<div class="video-frame">
+				<div class="specialObj">
 					<iframe
 					width="350"
 					height="200"
@@ -195,7 +127,7 @@
 					Office Level
 					</p>
 				</div>
-				<div class="video-frame">
+				<div class="specialObj">
 					<iframe
 					width="350"
 					height="200"
@@ -211,8 +143,5 @@
 			</div>
 			<br>
 		</main>
-		<footer>
-			Trevor Cardoza's Portfolio.
-		</footer>
 	</body>
 </html>
