@@ -4,6 +4,19 @@
 		<title>Trevor's Portfolio Page: Portfolio Home</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
+        <style>
+        .js-only {
+            display: none;
+        }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var javascriptOnlyElements = document.querySelectorAll('.js-only');
+                for (var i = 0; i < javascriptOnlyElements.length; i++) {
+                javascriptOnlyElements[i].style.display = 'block';
+                }
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
 	<body>
@@ -13,6 +26,7 @@
 			<nav>
 				<a href="../index.html">Home</a> |
 				<a href="about.html">About</a> |
+                <div class="js-only">
 				<div class="dropdown">
 					<span><a href="">Portfolio Work</a></span>
 					<div class="dropdown-content">
@@ -23,13 +37,31 @@
                         <a href="#" @click="loadPage('highsidin.html')">High Sidin': Hyphy Edition</a><br>
 					</div>
 				</div>
-				|
+            </div>
+            <noscript>
+                    <div class="dropdown">
+					<span><a href="">Portfolio Work</a></span>
+					<div class="dropdown-content">
+                        <a href="gladskin.html">GladskinMD</a><br>
+                        <a href="exactrac.html">ExacTrac</a><br>
+                        <a href="starwars.html">Star Wars Short</a><br>
+                        <a href="callOfDutyVanguard.html">Call Of Duty: VANGUARD</a><br>
+                        <a href="highsidin.html">High Sidin': Hyphy Edition</a><br>
+					</div>
+                </div>
+            </noscript>
+                |
 				<a href="socials.html"> Socials</a>
 			</nav>
 		</header>
 		<main>
             <main>
-                <div v-html="pageContent"></div>
+                <div id="app" ref="pageContainer" v-html="pageContent"></div>
+                <noscript>
+                    <img src="../images/portfolioImage.png" style="display: block; margin: auto;" alt="Portfolio Image" width="200" height="200"/>
+                    <h3>Nothing selected. Please select a Portfolio piece to load into this section of the page.</h3>
+                    <p>For a better experience, please enable Javascript in the Browser.</p>
+                </noscript>
             </main>
         </div>
         <script>
@@ -43,16 +75,28 @@
                         fetch(page)
                             .then(response => response.text())
                             .then(html => {
-                                this.pageContent = html;
+                                const tempContainer = document.createElement('div');
+                                tempContainer.innerHTML = html;
+                                
+                                const scriptElements = tempContainer.querySelectorAll('script');
+                                scriptElements.forEach(script => {
+                                    const scriptContent = script.innerHTML;
+                                    eval(scriptContent);
+                                });
+                                
+                                this.pageContent = tempContainer.innerHTML;
                                 this.$nextTick(() => {
-                                    this.executeInjectedCode();
+                                    this.$refs.pageContainer.querySelectorAll('.js-only').forEach(element => {
+                                        element.style.display = 'block';
+                                    });
+                                    this.executeScrollGallery();
                                 });
                             })
                             .catch(error => {
                                 console.error('Error loading page:', error);
                             });
                     },
-                    executeInjectedCode() {
+                    executeScrollGallery() {
                         const scriptElements = document.querySelectorAll('#app script');
                         scriptElements.forEach(script => {
                             const scriptContent = script.innerHTML;

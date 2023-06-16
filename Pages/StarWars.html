@@ -4,16 +4,46 @@
 		<title>Trevor's Portfolio Page: StarWars Short</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
+		<style>
+			.js-only {
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
+		<noscript>
+			<header>
+				<h1>Trevor's Portfolio Page</h1>
+				<nav>
+					<a href="../index.html">Home</a> |
+					<a href="about.html">About</a> |
+					<div class="dropdown">
+						<span><a href="portfolioHome.html">Portfolio Work</a></span>
+						<div class="dropdown-content">
+								<a href="gladskin.html">GladskinMD</a><br>
+								<a href="exactrac.html">ExacTrac</a><br>
+								<a href="starwars.html">Star Wars Short</a><br>
+								<a href="callOfDutyVanguard.html">Call Of Duty: VANGUARD</a><br>
+								<a href="highsidin.html">High Sidin': Hyphy Edition</a><br>
+						</div>
+					</div>
+					|
+					<a href="socials.html"> Socials</a>
+				</nav>
+			</header>
+		</noscript>
 		<main>
 			<h2>Star Wars Short: Trooper</h2>
-			<iframe
+			<iframe class ="js-only"
+			title="Star Wars Short: Trooper Video"
 				width="500"
 				height="300"
 				src="https://www.youtube.com/embed/pRO7PEZ8aMs"
 				allowfullscreen
 			></iframe>
+		<noscript>
+			<img src="../images/StarWarsShortIfNotWorking.jpg" alt="Star Wars Short: Trooper Video">
+		</noscript>
 			<p>
 				Trailer Description: Two farmers on a distant planet talk
 				about a crashed ship in the desert. The first virtual
