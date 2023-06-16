@@ -126,7 +126,7 @@ footer {
 	position: relative;
 	transform: translateY(-100%);
 	border-radius: 5px;
-	font-family: verdana;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-color: #f9fc5b;
 	padding: 20px;
 	margin-top: 20px;
@@ -134,7 +134,7 @@ footer {
 
 a {
 	color: #000000;
-	font-family: verdana;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-decoration: none;
 }
 

@@ -5,12 +5,18 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../Style/style.css" />
 		<style>
-			.gallery .button-container {
+			.gallery-container {
 				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 500px;
+			}
+			.gallery .button-container {
+				display: inline-flex;
+				align-items:baseline;
 				justify-content: space-between;
-				}
-				
-				.gallery .button-container button {
+			}
+			.gallery .button-container button {
 				background-color: #e6ffd4;
 				border: none;
 				color: #000000;
@@ -19,11 +25,11 @@
 				cursor: pointer;
 				}
 				
-				.gallery .button-container button:hover {
+			.gallery .button-container button:hover {
 				background-color: #ddff1c;
 				}
 				
-				.js-only {
+			.js-only {
 					display: none;
 				}
 		</style>
@@ -115,8 +121,6 @@
 				<div id= gallery class="gallery">
 					<div class="button-container">
 						<button  id="previousButton">Previous</button>
-						<button  id="nextButton">Next</button>
-					</div>
 				<div class="specialObj">
 					<div class = "js-only">
 					<iframe
@@ -186,6 +190,8 @@
 						Worked on Enemy AI Patterns, Clipping, Mounting and Grapple Points in
 						Post Office Level Roof Portion
 						</p>
+					</div>
+					<button  id="nextButton">Next</button>
 					</div>
 				</div>
 			</div>

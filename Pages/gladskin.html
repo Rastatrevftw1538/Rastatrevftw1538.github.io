@@ -5,8 +5,16 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../Style/style.css" />
     <style>
-        .gallery .button-container {
+		.gallery-container {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .gallery .button-container {
+            display: inline-flex;
+			align-items:baseline;
             justify-content: space-between;
         }
         
@@ -86,8 +94,8 @@
                 <div class="flex-container">
                     <div class="button-container">
                         <button class="button-container" id="previousButton">Previous</button>
-                        <button class="button-container" id="nextButton">Next</button>
-                    </div>
+                        
+                    
                     <div>
                         <img class="specialObj" width="auto" height="auto"src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
                     </div>
@@ -101,6 +109,8 @@
 							></iframe>
 						</div>
                     </div>
+					<button class="button-container" id="nextButton">Next</button>
+				</div>
                 </div>
             </div>
         </div>

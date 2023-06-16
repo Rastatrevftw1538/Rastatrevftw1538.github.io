@@ -17,4 +17,6 @@ Has been tested in Edge, Chrome, Firefox and Opera with both javascript on and o
 
 The one issue I couldnt figure out is when javascript is enabled, it brought the nav bar to the left and in block display when originally it was inline-block
 
+Another issue observed is that when scrolling through the gallery and then refreshing the page, it hides the current image and does not reset the image to its first index
+
 I also couldnt figure out why the portfolio work link font was smaller then the other links but only on mobile devices.
