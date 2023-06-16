@@ -23,51 +23,6 @@
             background-color: #ddff1c;
         }
     </style>
-    <script>
-        const object = Array.from(document.querySelectorAll('.specialImg'));
-				document.addEventListener('DOMContentLoaded', function() {
-				const gallery = document.querySelector('.gallery');
-				const buttonContainer = gallery.querySelector('.button-container');
-				const objectFrames = Array.from(document.querySelectorAll('.object-frame'));
-				const previousButton = document.querySelector('#previousButton');
-				const nextButton = document.querySelector('#nextButton');
-				
-				let currentObjectIndex = 0;
-				
-				
-				if (buttonContainer) {
-					buttonContainer.style.display = 'flex';
-				}
-			
-				objectFrames.forEach((frame, index) => {
-				if (index !== currentObjectIndex) {
-				frame.style.display = 'none';
-				}
-			});
-			document.addEventListener('DOMContentLoaded', function() {
-				
-				});
-			
-			function showPreviousVideo() {
-				if (currentObjectIndex > 0) {
-				videoFrames[currentObjectIndex].style.display = 'none';
-				currentObjectIndex--;
-				videoFrames[currentObjectIndex].style.display = 'block';
-				}
-			}
-			
-			function showNextVideo() {
-				if (currentObjectIndex < videoFrames.length - 1) {
-				videoFrames[currentObjectIndex].style.display = 'none';
-				currentObjectIndex++;
-				videoFrames[currentObjectIndex].style.display = 'block';
-				}
-			}
-			previousButton.addEventListener('click', showPreviousVideo);
-			nextButton.addEventListener('click', showNextVideo);
-			});
-			
-    </script>
     <noscript>
         <style>
             .gallery .button-container {
@@ -87,7 +42,7 @@
             height="300"
         />
         <h2>GladskinMD Battle of the Biome</h2>
-        <a href="https://showcase.lvlex.link/gladskin"> Try now!</a>
+        <a href="https://showcase.lvlex.link/gladskin"> Click to Try now!</a>
         <p>
             A demonstrative demo of how GladskinMD works for inflammatory
             skin conditions.
@@ -111,7 +66,7 @@
                         <button class="button-container" id="nextButton">Next</button>
                     </div>
                     <div>
-                        <img class="specialObj" width="350" height="200"src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
+                        <img class="specialObj" width="auto" height="auto"src="../images/Gladskin_PhoneImage.avif" alt="Gladskin Gameplay 1" />
                     </div>
                     <div>
                         <img class="specialObj" width="350" height="200"src="../images/Gladskin_PhoneImage1.jpeg" alt="Gladskin Gameplay 2" />
