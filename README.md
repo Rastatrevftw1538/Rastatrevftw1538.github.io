@@ -14,3 +14,7 @@ In the event that javascript is disabled, alternative images would be presentes
 to still show the work being presented.
 
 Has been tested in Edge, Chrome, Firefox and Opera with both javascript on and off
+
+The one issue I couldnt figure out is when javascript is enabled, it brought the nav bar to the left and in block display when originally it was inline-block
+
+I also couldnt figure out why the portfolio work link font was smaller then the other links but only on mobile devices.
