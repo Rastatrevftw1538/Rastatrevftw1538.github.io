@@ -1,7 +1,7 @@
 Final Project: Personal Portfolio
 
 This final project is a restructuring of my portfolio and
-also a test for using Vue.js and the DOM.
+also a test for using Vue.js, AJAX and the DOM.
 
 This project uses a plethora of HTML5 elements and
 has both a linked stylesheet and styles for individual pages
