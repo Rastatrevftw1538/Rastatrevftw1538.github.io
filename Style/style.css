@@ -2,6 +2,9 @@
 	max-width: 100%;
 	height: auto;
 }
+.socialMarketingimg img {
+	max-height: 35%;
+}
 
 .socialMediaImg {
 	display: inline-block;
@@ -12,7 +15,7 @@
 
 .dropdown {
 	position: relative;
-	display:inline-block;
+	display: inline-block;
 }
 
 .dropdown-content {
@@ -112,14 +115,14 @@ main {
 }
 
 nav {
-	display:block;
+	display: block;
 	border-radius: 5px;
 	background-color: #f9fc5b;
 	padding: 10px;
 }
 nav a {
-	display: inline; 
-	margin-right: 10px; 
+	display: inline;
+	margin-right: 10px;
 }
 
 footer {
@@ -164,9 +167,8 @@ iframe {
 	border: none;
 }
 img {
-	min-width: 100%;
 	min-height: 100%;
-	object-fit: contain;
+	object-fit: scale-down;
 }
 
 th {
